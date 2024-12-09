@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class HomeController extends BaseController
+class ThankYouController extends BaseController
 {
     public function index()
     {
@@ -30,8 +30,6 @@ class HomeController extends BaseController
                 : null, // null means logged out
         ];
 
-        return $this->render('home', $data);
+        return $this->render('thankyou', $data);
     }
 }
-
-

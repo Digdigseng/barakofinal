@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Barako</title>
+    <link rel="icon" type="image/x-png" href="assets/Favicon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b241a',
+                        accent: '#EBD9C1',
+                        secondary: '#744f36',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-secondary text-accent font-poppins min-h-screen flex flex-col">
+
+<!-- Navigation Bar -->
+<nav class="bg-primary shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-6 px-8">
+        <a href="/">
+            <img src="/assets/logo.png" class="h-14" alt="Logo">
+        </a>
+        <ul class="hidden md:flex space-x-8">
+            <li>
+                <a href="/" class="text-white text-lg font-semibold relative after:block after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 after:mt-[3px] hover:after:w-full">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="/menu" class="text-white text-lg font-semibold relative after:block after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 after:mt-[3px] hover:after:w-full">
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="/faqs" class="text-white text-lg font-semibold relative after:block after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 after:mt-[3px] hover:after:w-full">
+                    FAQs
+                </a>
+            </li>
+            <li>
+                <a href="/contact" class="text-white text-lg font-semibold relative after:block after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 after:mt-[3px] hover:after:w-full">
+                    Contact
+                </a>
+            </li>
+            <li>
+                <a href="/rate-menu" class="text-white text-lg font-semibold relative after:block after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 after:mt-[3px] hover:after:w-full">
+                    Rate
+                </a>
+            </li>
+        </ul>
+        <div class="flex space-x-6">
+            {{#username}}
+                <span class="text-white font-semibold">Welcome, <strong>{{username}}</strong></span>
+                <a href="/?logout=true" class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition">Logout</a>
+            {{/username}}
+            {{^username}}                
+                <a href="/login" class="px-6 py-3 border border-white bg-white font-bold text-primary rounded-lg hover:bg-primary hover:text-white transition">Admin Login</a>
+            {{/username}}
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="flex-grow container mx-auto pt-24 px-6">
+    <!-- About Heading -->
+    <h1 class="text-center text-5xl font-extrabold text-white mb-16">About Barako</h1>
+
+    <!-- Mission Section -->
+    <section class="mb-16">
+        <h2 class="text-4xl font-bold text-white mb-6 text-center">Our Mission</h2>
+        <p class="leading-relaxed text-lg text-center text-white max-w-3xl mx-auto">
+            At Barako, we are committed to providing the finest coffee experience to our customers. Our mission is to offer freshly brewed, high-quality coffee that delivers the perfect balance of flavor and warmth, creating an enjoyable and memorable experience with every cup.
+        </p>
+    </section>
+
+    <!-- History Section -->
+    <section class="mb-16 bg-[#EBD9C1] text-primary rounded-lg py-10 px-8 shadow-lg">
+        <h2 class="text-4xl font-bold text-primary mb-6 text-center">Our History</h2>
+        <p class="leading-relaxed text-lg text-center text-primary max-w-3xl mx-auto">
+            Founded in 2020, Barako was created with a passion for great coffee and exceptional customer service. We started with a small cafe and an idea to revolutionize the coffee culture. Since then, we’ve expanded into a convenient online ordering system that brings our signature brews to your doorstep.
+        </p>
+    </section>
+
+    <!-- Team Section -->
+    <section class="mt-16">
+        <h2 class="text-4xl font-bold text-white mb-6 text-center">Meet the Team</h2>
+        <p class="leading-relaxed text-lg text-center text-white max-w-3xl mx-auto mb-12">
+            Our team at Barako is made up of coffee enthusiasts and experienced baristas who take pride in crafting each cup with care and precision. We’re dedicated to ensuring that every customer receives the best coffee experience, whether it's in-store or from the comfort of their home.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <!-- Team Member -->
+            <div class="text-center bg-primary text-accent p-6 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.6435-9/132998730_3934629859922008_1033989923125443999_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEUD3lzgAauUUZW5x9xQFHY903hT597Ev33TeFPn3sS_ULSZimmjPYp2w3GN2i_9kIphFeRWnjrfCDX_ofKz44b&_nc_ohc=nlPfzM4_cGMQ7kNvgFbdPDd&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=A0X87lvhMTzgimUaHsZGP3G&oh=00_AYBZPJyeiJNqDBcxjVgNtzoE9CR5ztNKXQYu4_hKBTb-nA&oe=677D4AD9" alt="Carlo Gonzales" class="rounded-full w-24 h-24 mx-auto">
+                <h3 class="mt-6 font-bold text-lg">Carlo Gonzales</h3>
+                <p class="text-sm text-accent-light">Backend Coding</p>
+            </div>
+            <div class="text-center bg-primary text-accent p-6 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t1.15752-9/465820718_570262149040025_3838034079712252854_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFhRrN56a2ZEka86oRpiBIE3vsWcB2hlfve-xZwHaGV-4mFyCJpgHvOXlOw_g8-lBcAiLCt13cdUmq_C68ZdWIj&_nc_ohc=CZ-ZhWHB4OcQ7kNvgF0TcRL&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&oh=03_Q7cD1QHyA2nMESQTH0NBrv7vvpqYGjv_SMYi-rcQY-Oi7pZUwg&oe=677D4CCC" alt="Roberto Montemayor" class="rounded-full w-24 h-24 mx-auto">
+                <h3 class="mt-6 font-bold text-lg">Roberto Montemayor</h3>
+                <p class="text-sm text-accent-light">Backend Coding</p>
+            </div>
+            <div class="text-center bg-primary text-accent p-6 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="team3.jpg" alt="Brylle Diminsil" class="rounded-full w-24 h-24 mx-auto">
+                <h3 class="mt-6 font-bold text-lg">Brylle Diminsil</h3>
+                <p class="text-sm text-accent-light">Graphs and Documentation</p>
+            </div>
+            <div class="text-center bg-primary text-accent p-6 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.6435-9/60506907_487032521839229_5263364550165528576_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGn5Fy-IHcitZGn6vgXTbFr42dhbAUPhCPjZ2FsBQ-EI90how_43DK72WDEITZzlmBtL7gXiFrVPwE3FHVH3sj5&_nc_ohc=rbWtJsDlgVIQ7kNvgEqCOXD&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=Apzhhq83pZNt4rAsej_QzaE&oh=00_AYBaFSk6bIpfoU8c6ENtP8aA2p1A56kiWcPLCtnM0m71aQ&oe=677D3C95" alt="Carlos Louis Elmido" class="rounded-full w-24 h-24 mx-auto">
+                <h3 class="mt-6 font-bold text-lg">Carlos Louis Elmido</h3>
+                <p class="text-sm text-accent-light">Frontend Coding</p>
+            </div>
+            <div class="text-center bg-primary text-accent p-6 rounded-lg shadow-lg transition hover:scale-105">
+                <img src="https://scontent.fmnl25-6.fna.fbcdn.net/v/t1.6435-9/154617712_3708294709264875_3031566544765844958_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG1RulhK7NkIMSXhjx93B_FJyIqPRFDYP4nIio9EUNg_oMgAPl-3UUdT6w6AFLsALka9PEslb024_kG2-EWCWc6&_nc_ohc=1bZncrFb70EQ7kNvgHnuFWN&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&_nc_gid=AfwWeJWoKPL5j4GlEOtYOP5&oh=00_AYCuXP0LKjDfG-T6KFe_26MwjU7O-UYGHghB9RY81hFYrQ&oe=677D2FDF" alt="Bien Guillan Tubil" class="rounded-full w-24 h-24 mx-auto">
+                <h3 class="mt-6 font-bold text-lg">Bien Guillan</h3>
+                <p class="text-sm text-accent-light">Graphs and Documentation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-accent py-6 mt-16">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Barako Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>

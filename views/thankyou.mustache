@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Ordering</title>
+    <style>
+        /* Make sure the body and html take up the full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        /* Display the GIF as the only content */
+        .thankyou-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <script>
+        // Redirect after 3 seconds
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="thankyou-container">
+        <img src="https://static01.nyt.com/images/2016/09/14/well/mind/well_MIRL_14coffee/well_MIRL_14coffee-superJumbo-v3.gif" alt="Thank you!">
+    </div>
+</body>
+</html>

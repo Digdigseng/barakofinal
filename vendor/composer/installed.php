@@ -3,7 +3,7 @@
         'name' => 'aufipt/angelmvc',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'de1e2a14897eab706e6cf38343fe6bac5ca6f27c',
+        'reference' => 'c5c0e3629ae216c69b66995f11fcfaa099622e8c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'aufipt/angelmvc' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'de1e2a14897eab706e6cf38343fe6bac5ca6f27c',
+            'reference' => 'c5c0e3629ae216c69b66995f11fcfaa099622e8c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

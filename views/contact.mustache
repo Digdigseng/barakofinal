@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>Contact Us</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
-        // Tailwind Configuration
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: '#3b241a', // Navbar background
-                        accent: '#EBD9C1', // Text and accents
-                        secondary: '#744f36', // Section background
+                        accent: '#EBD9C1', // Text and button accents
+                        secondary: '#744f36', // Form background
                     },
                     fontFamily: {
-                        openSans: ['Open Sans', 'sans-serif'],
+                        sans: ['Poppins', 'sans-serif'],
                     },
                 },
             },
         };
     </script>
 </head>
-<body class="bg-accent font-openSans flex flex-col min-h-screen">
+<body class="bg-accent font-sans flex flex-col min-h-screen">
 
 <!-- Navigation Bar -->
 <nav class="bg-primary shadow-md">
@@ -71,32 +72,67 @@
     </div>
 </nav>
 
+<!-- Main Content -->
+<div class="flex-grow container mx-auto py-12 px-6">
+    <h1 class="text-4xl font-bold text-center text-primary mb-10">Contact Us</h1>
 
-<!-- Main Content Wrapper -->
-<div class="flex-grow">
-    <!-- FAQ Section -->
-    <div class="container mx-auto py-10 px-6">
-        <div class="faq-container bg-secondary p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-accent text-center mb-8">{{title}}</h2>
-            {{#faqs}}
-                <div class="faq-item mb-6">
-                    <h3 
-                        onclick="toggleAnswer({{id}})" 
-                        class="text-accent text-lg font-semibold cursor-pointer bg-transparent border border-[#EBD9C1] p-4 rounded hover:bg-[#64341a] transition"
-                    >
-                        {{question}}
-                    </h3>
-                    <div 
-                        id="answer-{{id}}" 
-                        class="faq-answer mt-2 bg-[#5a3a27] border-l-4 border-accent p-4 rounded hidden"
-                    >
-                        <p class="text-accent">
-                            {{answer}}
-                        </p>
-                    </div>
-                </div>
-            {{/faqs}}
+    <!-- Contact Form -->
+    <form 
+        id="contactForm" 
+        action="/contact/submit" 
+        method="POST" 
+        class="w-full max-w-lg mx-auto bg-secondary p-6 rounded-lg shadow-lg"
+    >
+        <!-- Name -->
+        <div class="mb-6">
+            <label for="name" class="block text-accent font-medium mb-2">Your Name</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            >
         </div>
+
+        <!-- Email -->
+        <div class="mb-6">
+            <label for="email" class="block text-accent font-medium mb-2">Your Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            >
+        </div>
+
+        <!-- Message -->
+        <div class="mb-6">
+            <label for="message" class="block text-accent font-medium mb-2">Your Message</label>
+            <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+            <button 
+                type="submit" 
+                class="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-[#230C02] transition focus:outline-none focus:ring-2 focus:ring-secondary"
+            >
+                Send Message
+            </button>
+        </div>
+    </form>
+
+    <!-- Back to Home Link -->
+    <div class="text-center mt-6">
+        <a href="/" class="text-primary hover:underline">Go to Home</a>
     </div>
 </div>
 
@@ -105,13 +141,18 @@
     <p>© 2024 Barako. All Rights Reserved.</p>
 </footer>
 
-<!-- JavaScript -->
 <script>
-    // Toggle the visibility of the FAQ answer when the question is clicked
-    function toggleAnswer(id) {
-        const answer = document.getElementById('answer-' + id);
-        answer.classList.toggle('hidden');
-    }
+    // Add event listener to the form
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+        
+        // Show a notification
+        alert('Thank you for your message!');
+        
+        // Optionally, submit the form after showing the message
+        this.submit();
+    });
 </script>
 
 </body>
